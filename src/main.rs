@@ -28,9 +28,7 @@
 
 //   4. lecke fugvenyek
 
-use core::f64;
-
-fn teglalap_terulete(szelesseg: f64, magassag: f64) -> f64 {
+/*fn teglalap_terulete(szelesseg: f64, magassag: f64) -> f64 {
     szelesseg*magassag // Nincs pontosvesszo = ezt adja vissza!
 }
 
@@ -58,5 +56,59 @@ fn main() {
     let kerulet = negyzet_kerulete(c);
     println!("A negyzet keruletenek erteke: {kerulet}");
 
+}*/
+
+//  5. feladat if-else es loop,while,for
+fn main (){
+
+    let szam = 7;
+    if szam < 10 {
+        println!("Egyjegyu szam.");
+    } else if szam < 100 {
+        println!("Ketjegyu szam.");
+    } else {
+        println!("Nagy szam.");
+    }
+
+    let feltetel = true;
+    let szam = if feltetel {5} else {6};
+    println!("A feltetel if ag eredmenye utan a szam : {szam}");
+
+    // Számtartomány: 1-től 5-ig (a 6 már nem tartozik bele)
+    for szam in 1..6 {
+    println!("{szam}...");
+    }
+
+    // Végighaladás egy tömbön:
+    let kosar = ["alma", "körte", "szilva"];
+    for gyumolcs in kosar {
+    println!("A kosárban van egy: {gyumolcs}");
+    }
+
+    let tomb = [12 , 25, 66, 82, 23];
+    for i in tomb {
+        println!("{i}...");
+        if paros_e(i) == true {
+            println!("Ez a paros szamos");
+        } else {
+            println!("Ez a szam paratlan");
+        }
+    }
+
+    for j in 1..11 {
+    if oszthato_harommal(j) == true {
+        println!("Ez a szam oszthato harommal : {j}");
+    }
+    }
 }
+fn paros_e (szam: i32) -> bool {
+    if szam % 2 == 0 { true 
+    } else { false }
+}
+
+fn oszthato_harommal (szam: i32) -> bool {
+    if szam % 3 == 0 { true
+    } else { false }
+}
+
 

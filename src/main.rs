@@ -13,18 +13,19 @@ let pi: f64 = 3.14159;
 let _is_rust_cool: bool = true;
 let _betu: char = 'R';
 let _sziv: char = '❤';
-//  
+//
 let sum = (x as f64) + pi;
 println!("Lebegőpontos eredmény: {sum}");
 let sum = x + (pi as i32);
 println!("Egész számú eredmény: {sum}"); // Ha a pi 3.14 volt, itt csak 3-at fog hozzáadni!
-                                         //  3.lecke osszetett valtozok, tombok
-                                         let varos: (&str, i32) = ("Tapolca",13500);
-                                         println!("Varos: {}, Lakossag: {}", varos.0, varos.1);
-                                         let tomb: [i32; 5] = [10,20,30,40,50];
-                                         println!("A harmadik szam: {}", tomb[2]); // nullatol indul az indexeles
-                                                                                   //    println!("A tomb 10. eleme pedig: {}", tomb[9]); //ez nem mukodhet                                               
-                                                                                   }*/
+
+//  3.lecke osszetett valtozok, tombok
+   let varos: (&str, i32) = ("Tapolca",13500);
+   println!("Varos: {}, Lakossag: {}", varos.0, varos.1);
+   let tomb: [i32; 5] = [10,20,30,40,50];
+   println!("A harmadik szam: {}", tomb[2]); // nullatol indul az indexeles
+   //    println!("A tomb 10. eleme pedig: {}", tomb[9]); //ez nem mukodhet
+}*/
 
 //   4. lecke fugvenyek
 
@@ -102,7 +103,7 @@ println!("Ez a szam oszthato harommal : {j}");
 }
 }
 fn paros_e (szam: i32) -> bool { szam % 2 == 0 }
-//    if szam % 2 == 0 { true  // ide mehetne csak szam % 2 == 0 az if helyett 
+//    if szam % 2 == 0 { true  // ide mehetne csak szam % 2 == 0 az if helyett
 //    } else { false }
 //}
 
@@ -123,15 +124,23 @@ fn main() {
 
     let text = String::from("Teszt szoveg amivel meghivom a fuggvenyt");
     hossz_kiiras(&text); // itt is & jelzi hogy csak kolcson adom 
-                         //println!("{text}"); itt sem megy mar az ujboli kiiratas az ownership miatt
+    //println!("{text}"); itt sem megy mar az ujboli kiiratas az ownership miatt
     println!("{text}"); //igy mar megy mivel & kolcsonbe ment csak at
     elso_karakter(&text);
 }
 
-fn hossz_kiiras(szoveg: &String) {  //A & miatt csak kolcson veszi az erteket , 
-    println!("A szoveg amit megadtam : {} es a hossza : {}",szoveg,szoveg.len());
+fn hossz_kiiras(szoveg: &str) {
+    //A & miatt csak kolcson veszi az erteket ,
+    println!(
+        "A szoveg amit megadtam : {} es a hossza : {}",
+        szoveg,
+        szoveg.len()
+    );
 }
 
-fn elso_karakter(szoveg2: &String) {
-    println!("A szoveg elso karaktere : {}",szoveg2.chars().next().unwrap());
+fn elso_karakter(szoveg2: &str) {
+    println!(
+        "A szoveg elso karaktere : {}",
+        szoveg2.chars().next().unwrap()
+    );
 }

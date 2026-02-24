@@ -56,7 +56,7 @@ fn main() {
     let kerulet = negyzet_kerulete(c);
     println!("A negyzet keruletenek erteke: {kerulet}");
 
-}*/
+}
 
 //  5. feladat if-else es loop,while,for
 fn main (){
@@ -110,5 +110,28 @@ fn oszthato_harommal (szam: i32) -> bool { szam % 2 == 0 }
 //    if szam % 3 == 0 { true
 //    } else { false }
 //}
+*/
 
+// 6. feladat Ownership
 
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1; // itt az adatok atkoltoznek az s2-be
+             
+    // println!("{s1}"); Ez hibat dob hisz az adatok mar az s2-ben vannak
+    println!("{s2}");
+
+    let text = String::from("Teszt szoveg amivel meghivom a fuggvenyt");
+    hossz_kiiras(&text); // itt is & jelzi hogy csak kolcson adom 
+    //println!("{text}"); itt sem megy mar az ujboli kiiratas az ownership miatt
+    println!("{text}"); //igy mar megy mivel & kolcsonbe ment csak at
+    elso_karakter(&text);
+}
+
+fn hossz_kiiras(szoveg: &String) {  //A & miatt csak kolcson veszi az erteket , 
+    println!("A szoveg amit megadtam : {} es a hossza : {}",szoveg,szoveg.len());
+    }
+
+fn elso_karakter(szoveg2: &String) {
+    println!("A szoveg elso karaktere : {}",szoveg2.chars().next().unwrap());
+}

@@ -88,7 +88,7 @@ fn main (){
     let tomb = [12 , 25, 66, 82, 23];
     for i in tomb {
         println!("{i}...");
-        if paros_e(i) == true {
+        if paros_e(i) {
             println!("Ez a paros szamos");
         } else {
             println!("Ez a szam paratlan");
@@ -96,19 +96,19 @@ fn main (){
     }
 
     for j in 1..11 {
-    if oszthato_harommal(j) == true {
+    if oszthato_harommal(j) {
         println!("Ez a szam oszthato harommal : {j}");
     }
     }
 }
-fn paros_e (szam: i32) -> bool {
-    if szam % 2 == 0 { true 
-    } else { false }
-}
+fn paros_e (szam: i32) -> bool { szam % 2 == 0 }
+//    if szam % 2 == 0 { true  // ide mehetne csak szam % 2 == 0 az if helyett 
+//    } else { false }
+//}
 
-fn oszthato_harommal (szam: i32) -> bool {
-    if szam % 3 == 0 { true
-    } else { false }
-}
+fn oszthato_harommal (szam: i32) -> bool { szam % 2 == 0 }
+//    if szam % 3 == 0 { true
+//    } else { false }
+//}
 
 

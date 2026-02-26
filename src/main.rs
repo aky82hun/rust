@@ -158,7 +158,17 @@ fn main() {
     println!("{s}"); // Kiirja hogy Szia, baratom!
     println!("{adat}");
     //    println!("{ref1}");
+
+    let szerver1= Szerver {
+        nev: String::from("Cachy-Prod"),
+        ip_cim: String::from("192.168.5.1"),
+        online: true,
+        terheles: 55.0,
+    };
+
+    szerver_allapot(&szerver1);
 }
+
 
 fn modosit(szoveg: &mut String) {
     szoveg.push_str(", baratom!"); // Hozzairunk a stringheza
@@ -167,3 +177,18 @@ fn modosit(szoveg: &mut String) {
 fn hozzaad(text: &mut String) {
     text.push_str("Loszar");
 }
+
+fn szerver_allapot(gep: &Szerver) {
+    println!("Nev: {}",gep.nev);
+    println!("Ip cim: {}",gep.ip_cim);
+    println!("Online? {}",gep.online);
+    println!("Terheles: {}",gep.terheles);
+}
+
+struct Szerver {
+    nev: String,
+    ip_cim: String,
+    online: bool,
+    terheles: f32,
+}
+

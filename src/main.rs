@@ -27,140 +27,143 @@ let mut kor = 40;
        //    println!("A tomb 10. eleme pedig: {}", tomb[9]); //ez nem mukodhet
     }*/
 
-    //   4. lecke fugvenyek
+//   4. lecke fugvenyek
 
-    /*fn teglalap_terulete(szelesseg: f64, magassag: f64) -> f64 {
-      szelesseg*magassag // Nincs pontosvesszo = ezt adja vissza!
-      }
+/*fn teglalap_terulete(szelesseg: f64, magassag: f64) -> f64 {
+  szelesseg*magassag // Nincs pontosvesszo = ezt adja vissza!
+  }
 
-      fn koszontes(nev: &str){
-      println!("Szia, {}! Orulok, hogy ma is tanulsz.", nev);
-      }
+  fn koszontes(nev: &str){
+  println!("Szia, {}! Orulok, hogy ma is tanulsz.", nev);
+  }
 
-      fn negyzet_kerulete(oldal: f64) -> f64 {
-      oldal * 4.0
-      }
+  fn negyzet_kerulete(oldal: f64) -> f64 {
+  oldal * 4.0
+  }
 
-      fn main() {
-    //  1. Udvozles meghivasa
-    koszontes("Akos");
+  fn main() {
+//  1. Udvozles meghivasa
+koszontes("Akos");
 
-    //  2. Terulet szamitas
-    let a = 5.5;
-    let b = 10.0;
-    let terulet = teglalap_terulete(a, b);
+//  2. Terulet szamitas
+let a = 5.5;
+let b = 10.0;
+let terulet = teglalap_terulete(a, b);
 
-    println!("A {a} es {b} oldalu teglalap terulete: {terulet}");
+println!("A {a} es {b} oldalu teglalap terulete: {terulet}");
 
-    // 3. kerulet szamitas
-    let c = 12.5;
-    let kerulet = negyzet_kerulete(c);
-    println!("A negyzet keruletenek erteke: {kerulet}");
+// 3. kerulet szamitas
+let c = 12.5;
+let kerulet = negyzet_kerulete(c);
+println!("A negyzet keruletenek erteke: {kerulet}");
 
-    }
+}
 
-    //  5. feladat if-else es loop,while,for
-    fn main (){
+//  5. feladat if-else es loop,while,for
+fn main (){
 
-    let szam = 7;
-    if szam < 10 {
-    println!("Egyjegyu szam.");
-    } else if szam < 100 {
-    println!("Ketjegyu szam.");
-    } else {
-    println!("Nagy szam.");
-    }
+let szam = 7;
+if szam < 10 {
+println!("Egyjegyu szam.");
+} else if szam < 100 {
+println!("Ketjegyu szam.");
+} else {
+println!("Nagy szam.");
+}
 
-    let feltetel = true;
-    let szam = if feltetel {5} else {6};
-    println!("A feltetel if ag eredmenye utan a szam : {szam}");
+let feltetel = true;
+let szam = if feltetel {5} else {6};
+println!("A feltetel if ag eredmenye utan a szam : {szam}");
 
-    // Számtartomány: 1-től 5-ig (a 6 már nem tartozik bele)
-    for szam in 1..6 {
-    println!("{szam}...");
-    }
+// Számtartomány: 1-től 5-ig (a 6 már nem tartozik bele)
+for szam in 1..6 {
+println!("{szam}...");
+}
 
-    // Végighaladás egy tömbön:
-    let kosar = ["alma", "körte", "szilva"];
-    for gyumolcs in kosar {
-    println!("A kosárban van egy: {gyumolcs}");
-    }
+// Végighaladás egy tömbön:
+let kosar = ["alma", "körte", "szilva"];
+for gyumolcs in kosar {
+println!("A kosárban van egy: {gyumolcs}");
+}
 
-    let tomb = [12 , 25, 66, 82, 23];
-    for i in tomb {
-    println!("{i}...");
-    if paros_e(i) {
-    println!("Ez a paros szamos");
-    } else {
-    println!("Ez a szam paratlan");
-    }
-    }
+let tomb = [12 , 25, 66, 82, 23];
+for i in tomb {
+println!("{i}...");
+if paros_e(i) {
+println!("Ez a paros szamos");
+} else {
+println!("Ez a szam paratlan");
+}
+}
 
-    for j in 1..11 {
-    if oszthato_harommal(j) {
-    println!("Ez a szam oszthato harommal : {j}");
-    }
-    }
-    }
-    fn paros_e (szam: i32) -> bool { szam % 2 == 0 }
-    //    if szam % 2 == 0 { true  // ide mehetne csak szam % 2 == 0 az if helyett
-    //    } else { false }
-    //}
+for j in 1..11 {
+if oszthato_harommal(j) {
+println!("Ez a szam oszthato harommal : {j}");
+}
+}
+}
+fn paros_e (szam: i32) -> bool { szam % 2 == 0 }
+//    if szam % 2 == 0 { true  // ide mehetne csak szam % 2 == 0 az if helyett
+//    } else { false }
+//}
 
-    fn oszthato_harommal (szam: i32) -> bool { szam % 2 == 0 }
-    //    if szam % 3 == 0 { true
-    //    } else { false }
-    //}
-    */
+fn oszthato_harommal (szam: i32) -> bool { szam % 2 == 0 }
+//    if szam % 3 == 0 { true
+//    } else { false }
+//}
+*/
 
-    // 6. feladat Ownership - 7. Borrowing es Referenciak
-    /*
-    fn main() {
-        let s1 = String::from("hello");
-        let s2 = s1; // itt az adatok atkoltoznek az s2-be
+// 6. feladat Ownership - 7. Borrowing es Referenciak
+/*
+fn main() {
+    let s1 = String::from("hello");
+    let s2 = s1; // itt az adatok atkoltoznek az s2-be
 
-        // println!("{s1}"); Ez hibat dob hisz az adatok mar az s2-ben vannak
-        println!("{s2}");
+    // println!("{s1}"); Ez hibat dob hisz az adatok mar az s2-ben vannak
+    println!("{s2}");
 
-        let text = String::from("Teszt szoveg amivel meghivom a fuggvenyt");
-        hossz_kiiras(&text); // itt is & jelzi hogy csak kolcson adom 
-        //println!("{text}"); itt sem megy mar az ujboli kiiratas az ownership miatt
-        println!("{text}"); //igy mar megy mivel & kolcsonbe ment csak at
-        elso_karakter(&text);
-    }
+    let text = String::from("Teszt szoveg amivel meghivom a fuggvenyt");
+    hossz_kiiras(&text); // itt is & jelzi hogy csak kolcson adom
+    //println!("{text}"); itt sem megy mar az ujboli kiiratas az ownership miatt
+    println!("{text}"); //igy mar megy mivel & kolcsonbe ment csak at
+    elso_karakter(&text);
+}
 
-    fn hossz_kiiras(szoveg: &str) {
-        //A & miatt csak kolcson veszi az erteket ,
-        println!(
-            "A szoveg amit megadtam : {} es a hossza : {}",
-            szoveg,
-            szoveg.len()
-        );
-    }
+fn hossz_kiiras(szoveg: &str) {
+    //A & miatt csak kolcson veszi az erteket ,
+    println!(
+        "A szoveg amit megadtam : {} es a hossza : {}",
+        szoveg,
+        szoveg.len()
+    );
+}
 
-    fn elso_karakter(szoveg2: &str) {
-        println!(
-            "A szoveg elso karaktere : {}",
-            szoveg2.chars().next().unwrap()
-        );
-    }
-    */
+fn elso_karakter(szoveg2: &str) {
+    println!(
+        "A szoveg elso karaktere : {}",
+        szoveg2.chars().next().unwrap()
+    );
+}
+*/
+
+// 8. feladat Mutablis kolcsonzes
 
 fn main() {
     let mut s = String::from("Szia");
-    let mut adat = String::from ("Alap");
-
+    let mut adat = String::from("Alap");
+    //    let ref1 = &adat;
     modosit(&mut s); // atadjuk a mutabilis referenciat
     hozzaad(&mut adat);
 
     println!("{s}"); // Kiirja hogy Szia, baratom!
-            println!("{adat}");
+    println!("{adat}");
+    //    println!("{ref1}");
 }
 
 fn modosit(szoveg: &mut String) {
-    szoveg.push_str(", baratom!");  // Hozzairunk a stringheza
+    szoveg.push_str(", baratom!"); // Hozzairunk a stringheza
 }
 
 fn hozzaad(text: &mut String) {
-  text.push_str("Loszar"); 
+    text.push_str("Loszar");
 }

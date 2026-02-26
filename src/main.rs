@@ -146,7 +146,28 @@ fn elso_karakter(szoveg2: &str) {
 }
 */
 
-// 8. feladat Mutablis kolcsonzes
+// 8. feladat Mutablis kolcsonzes 9. feladat strukturak
+
+struct Szerver {
+    nev: String,
+    ip_cim: String,
+    online: bool,
+    terheles: f32,
+}
+
+impl Szerver {
+    // ez egy metodus mert az elso parametere &self
+    fn szerver_allapot(&self) {
+    println!("Nev: {}", self.nev);
+    println!("Ip cim: {}", self.ip_cim);
+    println!("Online? {}", self.online);
+    println!("Terheles: {}", self.terheles);
+}
+    fn terheles_novel(&mut self,nov: f32) {
+        self.terheles += nov;
+        println!("A novelt terhelrs merteke: {}",nov);
+}
+}
 
 fn main() {
     let mut s = String::from("Szia");
@@ -159,16 +180,20 @@ fn main() {
     println!("{adat}");
     //    println!("{ref1}");
 
-    let szerver1= Szerver {
+    let mut szerver1 = Szerver {
         nev: String::from("Cachy-Prod"),
         ip_cim: String::from("192.168.5.1"),
         online: true,
         terheles: 55.0,
     };
 
-    szerver_allapot(&szerver1);
-}
+    szerver1.szerver_allapot();
 
+    szerver1.terheles_novel(15.5);
+
+    println!("A novelt ertekkel a szerver adatok:");
+    szerver1.szerver_allapot();
+}
 
 fn modosit(szoveg: &mut String) {
     szoveg.push_str(", baratom!"); // Hozzairunk a stringheza
@@ -178,17 +203,4 @@ fn hozzaad(text: &mut String) {
     text.push_str("Loszar");
 }
 
-fn szerver_allapot(gep: &Szerver) {
-    println!("Nev: {}",gep.nev);
-    println!("Ip cim: {}",gep.ip_cim);
-    println!("Online? {}",gep.online);
-    println!("Terheles: {}",gep.terheles);
-}
-
-struct Szerver {
-    nev: String,
-    ip_cim: String,
-    online: bool,
-    terheles: f32,
-}
 

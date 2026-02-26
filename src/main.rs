@@ -113,8 +113,8 @@ fn oszthato_harommal (szam: i32) -> bool { szam % 2 == 0 }
 //}
 */
 
-// 6. feladat Ownership
-
+// 6. feladat Ownership - 7. Borrowing es Referenciak
+/*
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1; // itt az adatok atkoltoznek az s2-be
@@ -144,3 +144,18 @@ fn elso_karakter(szoveg2: &str) {
         szoveg2.chars().next().unwrap()
     );
 }
+*/
+
+fn main() {
+    let mut s = String::from("Szia");
+
+    modosit(&mut s); // atadjuk a mutabilis referenciat
+                    
+    println!("{s}"); // Kiirja hogy Szia, baratom!
+}
+
+fn modosit(szoveg: &mut String) {
+    szoveg.push_str(", baratom!");  // Hozzairunk a stringheza
+    
+}
+

@@ -162,45 +162,67 @@ impl Szerver {
     println!("Ip cim: {}", self.ip_cim);
     println!("Online? {}", self.online);
     println!("Terheles: {}", self.terheles);
-}
+    }
+    
     fn terheles_novel(&mut self,nov: f32) {
         self.terheles += nov;
         println!("A novelt terhelrs merteke: {}",nov);
-}
+    }
+    fn uj(nev: String, ip: String) -> Szerver {
+        Szerver {
+            nev,
+            ip_cim: ip,
+            online: true,
+            terheles: 0.0,
+        }
+    }
+
+    fn reset_terheles(&mut self) {
+        self.terheles = 0.0;
+    }
 }
 
 fn main() {
-    let mut s = String::from("Szia");
-    let mut adat = String::from("Alap");
-    //    let ref1 = &adat;
-    modosit(&mut s); // atadjuk a mutabilis referenciat
-    hozzaad(&mut adat);
+//    let mut s = String::from("Szia");
+//    let mut adat = String::from("Alap");
+//    let ref1 = &adat;
+//    modosit(&mut s); // atadjuk a mutabilis referenciat
+//    hozzaad(&mut adat);
 
-    println!("{s}"); // Kiirja hogy Szia, baratom!
-    println!("{adat}");
+//    println!("{s}"); // Kiirja hogy Szia, baratom!
+//    println!("{adat}");
     //    println!("{ref1}");
 
-    let mut szerver1 = Szerver {
+    /*let mut szerver1 = Szerver {
         nev: String::from("Cachy-Prod"),
         ip_cim: String::from("192.168.5.1"),
         online: true,
         terheles: 55.0,
-    };
+    };*/
 
-    szerver1.szerver_allapot();
+//    szerver1.szerver_allapot();
 
-    szerver1.terheles_novel(15.5);
+//    szerver1.terheles_novel(15.5);
+   
+//    println!("A novelt ertekkel a szerver adatok:");
+//    szerver1.szerver_allapot();
 
-    println!("A novelt ertekkel a szerver adatok:");
-    szerver1.szerver_allapot();
+    let mut szerver2 = Szerver::uj(String::from("Web01"), String::from("127.0.0.1"));
+    szerver2.szerver_allapot();
+    szerver2.terheles_novel(25.5);
+    szerver2.szerver_allapot();
+    szerver2.reset_terheles();
+    szerver2.szerver_allapot();
+    
+
 }
 
-fn modosit(szoveg: &mut String) {
+/*fn modosit(szoveg: &mut String) {
     szoveg.push_str(", baratom!"); // Hozzairunk a stringheza
 }
 
 fn hozzaad(text: &mut String) {
     text.push_str("Loszar");
-}
+}*/
 
 
